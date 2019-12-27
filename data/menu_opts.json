@@ -1,0 +1,50 @@
+{
+    "nombreApp": "Componentes",
+    "rutas": [
+        {
+            "ruta": "alert",
+            "icon": "add_alert",
+            "texto": "Alertas"
+        },
+        {
+            "ruta": "avatar",
+            "icon": "accessibility",
+            "texto": "Avatars"
+        },
+        {
+            "ruta": "card",
+            "icon": "folder_open",
+            "texto": "Cards - Tarjetas"
+        },
+        {
+            "ruta": "contenedor",
+            "icon": "donut_large",
+            "texto": "Contenedor animado"
+        },
+        {
+            "ruta": "slider",
+            "icon": "all_inclusive",
+            "texto": "Slider"
+        },
+        {
+            "ruta": "mapa",
+            "icon": "mapa",
+            "texto": "Mapa Offline"
+        },
+        {
+            "ruta": "gps",
+            "icon": "mapa",
+            "texto": "GPS Offline"
+        },
+        {
+            "ruta": "movie/home",
+            "icon": "movie",
+            "texto": "App de Películas"
+        },
+        {
+            "ruta": "design/home",
+            "icon": "design",
+            "texto": "App de Diseños"
+        }
+    ]
+}
