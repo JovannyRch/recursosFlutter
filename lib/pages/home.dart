@@ -40,7 +40,9 @@ List<Widget> _listItems(List<dynamic> data, BuildContext context) {
     'all_inclusive': Icons.all_inclusive,
     'mapa': Icons.location_on,
     'movie': Icons.local_movies,
-    'design': Icons.color_lens
+    'design': Icons.color_lens,
+    'scroll': Icons.repeat,
+    'qr': Icons.search,
   };
   return data
       .map((item) => ListTile(

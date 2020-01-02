@@ -44,7 +44,17 @@
         {
             "ruta": "design/home",
             "icon": "design",
-            "texto": "App de Diseños"
+            "texto": "App de Diseños/Inicio"
+        },
+        {
+            "ruta": "desing/scroll",
+            "icon": "scroll",
+            "texto": "App de Diseños/Scroll"
+        },
+        {
+            "ruta": "qr/home",
+            "icon": "qr",
+            "texto": "QR Scanner"
         }
     ]
 }

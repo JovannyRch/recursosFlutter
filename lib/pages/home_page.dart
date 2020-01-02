@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Componentes"),
+        title: Text("Demostración Flutter"),
       ),
       body: ListView(
         children: this._crearItems2(),
