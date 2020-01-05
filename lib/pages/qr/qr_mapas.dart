@@ -1,6 +1,6 @@
 import 'package:componentes/bloc/scan_blocs.dart';
 import 'package:componentes/models/scan_model.dart';
-import 'package:componentes/utils/utils.dart';
+import 'package:componentes/utils/utils.dart' as utils;
 import 'package:flutter/material.dart';
 
 class MapasPageQR extends StatelessWidget {
@@ -8,9 +8,10 @@ class MapasPageQR extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _scansBloc.getScans();
     return Scaffold(
       body: StreamBuilder(
-        stream: _scansBloc.scansStream,
+        stream: _scansBloc.scansStreamGeo,
         builder:
             (BuildContext context, AsyncSnapshot<List<ScanModel>> snapshot) {
           if (!snapshot.hasData) {
@@ -34,12 +35,12 @@ class MapasPageQR extends StatelessWidget {
                 ),
                 key: UniqueKey(),
                 child: ListTile(
-                  leading: Icon(Icons.cloud_queue),
+                  leading: Icon(Icons.map),
                   title: Text(scans[i].valor),
                   trailing: Icon(Icons.arrow_forward_ios),
                   subtitle: Text(scans[i].id.toString()),
                   onTap: () {
-                    launchScan(scans[i]);
+                    utils.launchScan(context, scans[i]);
                   },
                 ),
                 onDismissed: (tile) {

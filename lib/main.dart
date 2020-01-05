@@ -1,7 +1,13 @@
+import 'package:componentes/share_prf/preferencias.dart';
 import 'package:flutter/material.dart';
 import 'routes/routes.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  PreferenciasUsuario preferenciasUsuario = new PreferenciasUsuario();
+  await preferenciasUsuario.initPrefs();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

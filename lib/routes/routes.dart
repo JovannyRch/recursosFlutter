@@ -1,7 +1,10 @@
 import 'package:componentes/pages/design/design_home.dart';
 import 'package:componentes/pages/movie/detalles_movie.dart';
 import 'package:componentes/pages/movie/home_movie.dart';
+import 'package:componentes/pages/preferencias_usuario/pu_home.dart';
+import 'package:componentes/pages/preferencias_usuario/pu_settings.dart';
 import 'package:componentes/pages/qr/qr_home_page.dart';
+import 'package:componentes/pages/qr/qr_map.dart';
 import 'package:flutter/material.dart';
 
 import 'package:componentes/pages/alert_page.dart';
@@ -28,4 +31,7 @@ final rutas = <String, WidgetBuilder>{
   'design/home': (BuildContext context) => DesignHome(),
   'desing/scroll': (BuildContext context) => ScrollPage(),
   'qr/home': (BuildContext context) => QRHome(),
+  'qr/mapa': (BuildContext context) => QRMap(),
+  'pu/home': (BuildContext context) => PUHome(),
+  'pu/settings': (BuildContext context) => PUSettings(),
 };

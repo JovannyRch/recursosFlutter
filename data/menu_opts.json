@@ -55,6 +55,11 @@
             "ruta": "qr/home",
             "icon": "qr",
             "texto": "QR Scanner"
+        },
+        {
+            "ruta": "pu/home",
+            "icon": "user",
+            "texto": "Preferencias de usuario"
         }
     ]
 }

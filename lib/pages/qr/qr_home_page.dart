@@ -38,20 +38,21 @@ class _QRHomeState extends State<QRHome> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.filter_center_focus),
-        onPressed: _scannQR,
+        onPressed: () => _scannQR(context),
       ),
     );
   }
 
-  void _scannQR() async {
+  void _scannQR(BuildContext context) async {
     //https
     //geo:40.65133996321017,-74.27235975703127
-    String futureString = "https//www.jovannyrch.com";
-    /* try {
+    String futureString = "";
+    //String futureString = "https//www.jovannyrch.com";
+    try {
       futureString = await BarcodeScanner.scan();
     } catch (e) {
       futureString = e.toString();
-    } */
+    }
 
     if (futureString != null) {
       ScanModel scan = ScanModel(valor: futureString);
@@ -59,10 +60,10 @@ class _QRHomeState extends State<QRHome> {
 
       if (Platform.isIOS) {
         Future.delayed(new Duration(milliseconds: 759), () {
-          utils.launchScan(scan);
+          utils.launchScan(context, scan);
         });
       } else {
-        utils.launchScan(scan);
+        utils.launchScan(context, scan);
       }
     }
   }

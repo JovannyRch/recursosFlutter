@@ -1,3 +1,6 @@
+import 'package:componentes/providers/db_provider.dart';
+import 'package:latlong/latlong.dart';
+
 class ScanModel {
   int id;
   String tipo;
@@ -26,4 +29,8 @@ class ScanModel {
         "tipo": tipo,
         "valor": valor,
       };
+  LatLng getLatLng() {
+    final latlog = this.valor.substring(4).split(",");
+    return LatLng(double.parse(latlog[0]), double.parse(latlog[1]));
+  }
 }

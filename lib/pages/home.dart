@@ -1,11 +1,9 @@
+import 'package:componentes/share_prf/preferencias.dart';
 import 'package:flutter/material.dart';
 import 'package:componentes/providers/menu_provider.dart';
-import 'package:componentes/pages/avatar_page.dart';
-import 'package:componentes/pages/alert_page.dart';
 
 class Home extends StatelessWidget {
   Home({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,6 +30,7 @@ class Home extends StatelessWidget {
 }
 
 List<Widget> _listItems(List<dynamic> data, BuildContext context) {
+  PreferenciasUsuario preferenciasUsuario = new PreferenciasUsuario();
   final iconosString = <String, IconData>{
     'add_alert': Icons.add_alert,
     'accessibility': Icons.accessibility,
@@ -43,6 +42,7 @@ List<Widget> _listItems(List<dynamic> data, BuildContext context) {
     'design': Icons.color_lens,
     'scroll': Icons.repeat,
     'qr': Icons.search,
+    'user': Icons.perm_contact_calendar
   };
   return data
       .map((item) => ListTile(
@@ -60,7 +60,10 @@ List<Widget> _listItems(List<dynamic> data, BuildContext context) {
                 return AlertPage();
               })); */
               print(item['ruta']);
-              Navigator.pushNamed(context, item['ruta']);
+              if (item['ruta'] == 'pu/home') {
+                Navigator.pushNamed(context, preferenciasUsuario.ultimaPagina);
+              } else
+                Navigator.pushNamed(context, item['ruta']);
             },
           ))
       .toList();
