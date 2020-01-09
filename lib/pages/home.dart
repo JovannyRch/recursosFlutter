@@ -42,7 +42,8 @@ List<Widget> _listItems(List<dynamic> data, BuildContext context) {
     'design': Icons.color_lens,
     'scroll': Icons.repeat,
     'qr': Icons.search,
-    'user': Icons.perm_contact_calendar
+    'user': Icons.perm_contact_calendar,
+    'crud': Icons.assignment,
   };
   return data
       .map((item) => ListTile(

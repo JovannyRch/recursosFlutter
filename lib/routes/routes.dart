@@ -1,3 +1,5 @@
+import 'package:componentes/pages/crud/crud_home_page.dart';
+import 'package:componentes/pages/crud/crud_login_page.dart';
 import 'package:componentes/pages/design/design_home.dart';
 import 'package:componentes/pages/movie/detalles_movie.dart';
 import 'package:componentes/pages/movie/home_movie.dart';
@@ -34,4 +36,6 @@ final rutas = <String, WidgetBuilder>{
   'qr/mapa': (BuildContext context) => QRMap(),
   'pu/home': (BuildContext context) => PUHome(),
   'pu/settings': (BuildContext context) => PUSettings(),
+  'crud/login': (BuildContext context) => LoginCrudPage(),
+  'crud/home': (BuildContext context) => HomeCrudPage(),
 };

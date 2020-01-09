@@ -60,6 +60,11 @@
             "ruta": "pu/home",
             "icon": "user",
             "texto": "Preferencias de usuario"
+        },
+        {
+            "ruta": "crud/login",
+            "icon": "crud",
+            "texto": "CRUD App"
         }
     ]
 }
