@@ -6,6 +6,7 @@ class PreferenciasUsuario {
   bool _colorSecundario;
   int _genero;
   String _nombre;
+  String _token;
 
   PreferenciasUsuario._internal();
   SharedPreferences _prefs;
@@ -44,6 +45,14 @@ class PreferenciasUsuario {
 
   set ultimaPagina(String nombre) {
     _prefs.setString('ultimaPagina', nombre);
+  }
+
+  get token {
+    return _prefs.getInt('token') ?? "";
+  }
+
+  set token(String token) {
+    _prefs.setString('token', token);
   }
 
   factory PreferenciasUsuario() {

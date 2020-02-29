@@ -1,3 +1,4 @@
+import 'package:componentes/bloc/provider.dart';
 import 'package:componentes/share_prf/preferencias.dart';
 import 'package:flutter/material.dart';
 import 'routes/routes.dart';
@@ -12,11 +13,13 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Componentes',
-      initialRoute: '/',
-      routes: rutas,
+    return Provider(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Componentes',
+        initialRoute: '/',
+        routes: rutas,
+      ),
     );
   }
 }

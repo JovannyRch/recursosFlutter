@@ -3,9 +3,8 @@ import 'package:componentes/providers/usuarios_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:componentes/utils/utils.dart' as utils;
 
-class LoginCrudPage extends StatelessWidget {
+class RegistroCrudPage extends StatelessWidget {
   final usuarioProvider = new UsuarioProvider();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,9 +65,9 @@ class LoginCrudPage extends StatelessWidget {
             ),
           ),
           FlatButton(
-            child: Text("Registrarse"),
+            child: Text("Crear cuenta"),
             onPressed: () =>
-                Navigator.pushReplacementNamed(context, 'crud/registro'),
+                Navigator.pushReplacementNamed(context, 'crud/login'),
           ),
         ],
       ),
@@ -80,9 +79,9 @@ class LoginCrudPage extends StatelessWidget {
       stream: bloc.formValidStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return RaisedButton(
-          onPressed: !snapshot.hasData ? null : () => _login(context, bloc),
+          onPressed: !snapshot.hasData ? null : () => _registro(context, bloc),
           child: Container(
-            child: Text("Ingresar"),
+            child: Text("Registrarse"),
             padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
           ),
           shape: RoundedRectangleBorder(
@@ -96,8 +95,10 @@ class LoginCrudPage extends StatelessWidget {
     );
   }
 
-  void _login(BuildContext context, LoginBloc bloc) async {
-    var resp = await usuarioProvider.login(bloc.email, bloc.password);
+  void _registro(BuildContext context, LoginBloc bloc) async {
+    /* Navigator.pushReplacementNamed(context, 'crud/home'); */
+    var resp =
+        await this.usuarioProvider.nuevoUsuario(bloc.email, bloc.password);
     if (resp['ok'])
       Navigator.pushReplacementNamed(context, 'crud/home');
     else {

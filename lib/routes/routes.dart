@@ -1,5 +1,7 @@
 import 'package:componentes/pages/crud/crud_home_page.dart';
 import 'package:componentes/pages/crud/crud_login_page.dart';
+import 'package:componentes/pages/crud/crud_registro_page.dart';
+import 'package:componentes/pages/crud/producto_page.dart';
 import 'package:componentes/pages/design/design_home.dart';
 import 'package:componentes/pages/movie/detalles_movie.dart';
 import 'package:componentes/pages/movie/home_movie.dart';
@@ -38,4 +40,6 @@ final rutas = <String, WidgetBuilder>{
   'pu/settings': (BuildContext context) => PUSettings(),
   'crud/login': (BuildContext context) => LoginCrudPage(),
   'crud/home': (BuildContext context) => HomeCrudPage(),
+  'crud/producto': (BuildContext context) => ProductPage(),
+  'crud/registro': (BuildContext context) => RegistroCrudPage(),
 };
